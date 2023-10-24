@@ -1,0 +1,235 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #454545;
+    color: white;
+}
+
+input{
+    background-color: #454545;
+    color: white;
+}
+
+
+/* header */
+.container-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 20px 10px 30px 10px;
+
+}
+    .container-header a{
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+    }
+
+ 
+#mostrarModal{
+    height: 40px;
+    padding: 0px 60px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    /* font-weight: bold; */
+    /* border-radius: 7px; */
+    /* border: none; */
+} 
+
+
+
+.contenedor-tiempo_ejecucion{
+    display: none;
+}
+
+/* Botones principal */
+
+.btn-detener{
+    display:none;
+}
+
+
+
+/* Ventana Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-contenido {
+    background-color: #fff;
+    color: black;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+}
+
+    .modal-contenido #modal-tittle{
+        font-size: 30px;
+        color: #454545;
+        font-weight: bold;
+        
+    }
+
+    .modal-header{
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.contenedor-tiempo{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+    .contenedor-tiempo h2{
+        margin-bottom: 25px;
+        font-size: 25px;
+        color: #454545;
+    }
+    .contenedor-tiempo label{
+        font-size: 20px;
+    }
+
+    .contenedor-tiempo input{
+        margin-right: 48.5px;
+        width: 80pxx;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #454545;
+        color: black;
+        font-size: 18px;
+        outline: none;
+        text-align: center;
+
+    }
+ 
+.contenedor-tiempo_descanso{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}   
+
+    .contenedor-tiempo_descanso h2{
+        margin-bottom: 25px;
+        font-size: 25px;
+        color: #454545;
+    }
+    .contenedor-tiempo_descanso label{
+        font-size: 20px;
+    }
+
+    .contenedor-tiempo_descanso input{
+        margin-right: 48.5px;
+        width: 80px;
+        background: #fff;
+        border: none;
+        border-bottom: 1px solid #454545;
+        color: black;
+        font-size: 18px;
+        outline: none;
+        text-align: center;
+
+    }
+.modal-more_options{
+    margin-top: 40px;
+}
+.modal-more_options label{
+    font-size: 20px;
+}
+
+.modal-more_options input{
+    width: 80px;
+    background: #fff;
+    border: none;
+    border-bottom: 1px solid #454545;
+    color: black;
+    font-size: 18px;
+    outline: none;
+    text-align: center;
+}
+
+.cerrar {
+    cursor: pointer;
+    color: black;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+/* tasks */
+
+.container-task{
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+    margin: 15px 5px;
+}
+
+
+.tarea-completada{
+    border: 4px solid green;
+}
+
+.tarea-seleccionada{
+    margin-left: 15px;
+    border-left: 7px solid black;
+}
+
+
+.container-task_options{
+    display: none;
+}
+
+
+.btn-modify-task{
+    margin-left: 8px;
+}
+
+
+/* Main container */
+
+.contenedor-principal{
+    display: flex;       
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.container-time{
+    font-size: 80px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container-buttons_time button{
+ padding: 7px 55px;   
+ margin: 20px 8px;
+ font-size: 20px;
+}
+
+.btn-reiniciar{
+    padding: 7px 30px !important;
+}
+
+.btn-iniciar{
+    font-weight: bold;
+    outline: none;
+}
+
+.container-pomodoro_count{
+    margin-top: 20px;
+    font-size: 20px;
+    opacity: 0.6;
+}
