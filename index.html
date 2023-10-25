@@ -130,21 +130,26 @@
 
         <h2>Agregar tareas</h2>
 
-        <label for="titulo-tarea">name of the task:</label>
-        <input type="text" id="titulo-tarea" name="titulo-tarea" >
+        <!-- <label for="titulo-tarea">name of the task:</label> -->
+        <input placeholder="Name of the task" type="text" id="titulo-tarea" name="titulo-tarea" >
 
-        <button class="btn-addTask">agregar tarea</button>
-        <div>
-            <span>number of pomodoros for this task: </span>
+        <div class="container-add-task_options">
+            <span id="goal-task">Goal </span>
             <span class="task-number-setGoal">1</span>
             <button class="btn-climbGoal">subir</button>
             <button class="btn-lowerGoal">bajar</button>    
         </div>
+
+        <button class="btn-addTask">agregar tarea</button>
+
     </div>
 
-    <h2>Tareas por realizar</h2>
-    <div class="container-tasks">
-      
+    <div class="container-tasks_main">
+        <h2>Tareas por realizar</h2>
+        <div class="container-tasks">
+          
+        </div>
+    
     </div>
 
 </div>

@@ -21,7 +21,7 @@ input{
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    margin: 20px 10px 30px 10px;
+    margin: 15px 15px 30px 15px;
 
 }
     .container-header a{
@@ -214,7 +214,7 @@ input{
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
-    border: 1px solid white;
+    border: 3px solid white;
     padding: 80px;
     border-radius: 10px;
 
@@ -242,7 +242,61 @@ input{
 }
 
 .container-pomodoro_count{
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 20px;
     opacity: 0.6;
+}
+
+/* Crear tarea */
+
+.contenedor-tareas h2{
+ font-size: 45px;
+ margin-top: 55px;
+ margin-bottom: 90px;
+}
+
+.contenedor-crear_tareas{
+text-align: center;
+font-size: 25px;
+}
+
+.contenedor-crear_tareas input{
+    border: none;
+    border-bottom: 2px solid #fff;
+    width: 34%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contenedor-crear_tareas input:focus{
+    outline: none;
+}
+
+    .contenedor-crear_tareas input:hover{
+        border-bottom: 2px solid #cccccc;
+    }
+
+    .contenedor-crear_tareas input::placeholder{
+        font-style: italic;
+
+    }
+
+#goal-task{
+    opacity: 0.9;
+}
+
+.task-number-setGoal{
+opacity: 0.9;
+
+}
+
+.container-add-task_options{
+width: 34%;
+margin: 3px auto;
+display: flex;
+}
+
+
+.container-tasks_main{
+    text-align: center;
 }
