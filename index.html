@@ -89,31 +89,34 @@
 
 <div class="contenedor-principal">
 
-    <button id="mostrarModal" class="btn btn-outline-light">settings</button>
+    <div class="contenedor-principal_borde">
+        <button id="mostrarModal" class="btn btn-outline-light">settings</button>
 
 
-    <div class="contenedor-tiempo_establecido container-time">
-        <span id="horas">0</span>
-        <span>:</span>
-        <span id="minutos">0</span>
-        <span>:</span>
-        <span id="segundos">0</span>
+        <div class="contenedor-tiempo_establecido container-time">
+            <span id="horas">0</span>
+            <span>:</span>
+            <span id="minutos">0</span>
+            <span>:</span>
+            <span id="segundos">0</span>
+        </div>
+
+        <div class="contenedor-tiempo_ejecucion container-time">
+            <span class="horas-s">0</span>
+            <span>:</span>
+            <span class="minutos-s">0</span>
+            <span>:</span>
+            <span class="segundos-s">0</span>
+        </div>
+        
+        <div class="container-buttons_time">
+            <button class="btn-iniciar btn btn-outline-success">Init</button>
+            <button class="btn-detener btn btn-outline-danger">Stop</button>
+            <button class="btn-reiniciar btn btn-outline-secondary">Restart</button>
+        </div>
+
+
     </div>
-
-    <div class="contenedor-tiempo_ejecucion container-time">
-        <span class="horas-s">0</span>
-        <span>:</span>
-        <span class="minutos-s">0</span>
-        <span>:</span>
-        <span class="segundos-s">0</span>
-    </div>
-    
-    <div class="container-buttons_time">
-        <button class="btn-iniciar btn btn-outline-success">Init</button>
-        <button class="btn-detener btn btn-outline-danger">Stop</button>
-        <button class="btn-reiniciar btn btn-outline-secondary">Restart</button>
-    </div>
-
   
     <div class="container-pomodoro_count">
         <p ># <span class="contandor-pomodoro" >0</span></p>
