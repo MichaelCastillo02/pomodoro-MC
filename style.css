@@ -34,8 +34,8 @@ input{
 #mostrarModal{
     height: 40px;
     padding: 0px 60px;
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
     /* font-weight: bold; */
     /* border-radius: 7px; */
     /* border: none; */
@@ -215,25 +215,25 @@ input{
     align-items: center; 
     justify-content: center; 
     border: 3px solid white;
-    padding: 80px;
+    padding: 80px 180px;
     border-radius: 10px;
 
 }
 
 .container-time{
-    font-size: 80px;
+    font-size: 100px;
     font-family: 'Roboto', sans-serif;
 }
 
 
 .container-buttons_time button{
  padding: 7px 55px;   
- margin: 20px 8px;
+ margin: 20px 15px;
  font-size: 20px;
 }
 
 .btn-reiniciar{
-    padding: 7px 30px !important;
+    padding: 7px 40px !important;
 }
 
 .btn-iniciar{
@@ -251,7 +251,7 @@ input{
 
 .contenedor-tareas h2{
  font-size: 45px;
- margin-top: 55px;
+ margin-top: 100px;
  margin-bottom: 90px;
 }
 
@@ -295,7 +295,7 @@ margin-right: 30px;
 
 .container-add-task_options{
 width: 34%;
-margin: 3px auto;
+margin: 15px auto;
 display: flex;
 }
 
@@ -310,15 +310,56 @@ display: flex;
     padding: 5px 15px;
 }
 
+.container-add-task_options button:focus{
+    box-shadow: none;    
+}
 .btn-climbGoal{
     margin-right: 15px;
 
 }
 
 .btn-addTask{
-    margin-top: 30px;
+    margin-top: 80px;
+    border: 1px solid white;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 14px 35px;
 }
 
 .container-tasks_main{
     text-align: center;
+}
+
+/* Bordes */
+
+
+.borde-1{
+/* margin-top: 30px; */
+margin: 90px auto;
+margin-bottom: 0px;
+width: 60%;
+}
+
+.borde-2{
+margin: 100px auto;
+margin-bottom: 0px;
+width: 60%;
+}
+
+hr{
+    padding: 3px;
+    color: white;
+}
+
+/* Contenedor de tareas */
+
+.container-tasks{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.container-task{
+    width: 60%;
 }

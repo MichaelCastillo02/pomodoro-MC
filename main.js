@@ -233,8 +233,8 @@ btnAddTask.addEventListener("click",(e)=>{
     containerTask = document.createElement("div")
     containerTask.innerHTML =  `
     <span><span class="tittle_task">${titleTask}</span> <input type="text" style="display: none;" class="input-modify_tittle"> <span style="margin-left: 20px;" class="task-number-complete">0</span> / <span class="task-number-goal">${numberGoal}</span></span>
-    <button class="btn-modify-task"> : </button>
-    <button class="btn-select-task"> * </button>
+    <button class="btn-modify-task btn"> : </button>
+    <button class="btn-select-task btn btn-outline-dark"> * </button>
 
     <div class="container-task_options">
       <div style="margin: 20px 0px;">
