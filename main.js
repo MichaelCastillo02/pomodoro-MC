@@ -440,6 +440,7 @@ containerTasks.addEventListener("click",(e)=>{
 
 btnClimbGoal.addEventListener("click",()=>{
     counterGoalTask++
+    console.log("hola")
     spanNumberSetGoal.textContent = counterGoalTask
 
 })

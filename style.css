@@ -265,7 +265,7 @@ font-size: 25px;
     border-bottom: 2px solid #fff;
     width: 34%;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .contenedor-crear_tareas input:focus{
@@ -282,11 +282,14 @@ font-size: 25px;
     }
 
 #goal-task{
-    opacity: 0.9;
+    opacity: 0.5;
+    margin-right: 15px;
 }
 
 .task-number-setGoal{
-opacity: 0.9;
+/* opacity: 0.6; */
+font-weight: bold;
+margin-right: 30px;
 
 }
 
@@ -296,6 +299,25 @@ margin: 3px auto;
 display: flex;
 }
 
+.container-add-task_options button i{
+    color: white;
+    font-size: 20px;
+    
+}
+
+.container-add-task_options button {
+    border: 1px solid white;
+    padding: 5px 15px;
+}
+
+.btn-climbGoal{
+    margin-right: 15px;
+
+}
+
+.btn-addTask{
+    margin-top: 30px;
+}
 
 .container-tasks_main{
     text-align: center;
