@@ -128,9 +128,10 @@ intervalo = (horas,minutos,segundos,outputHoras, outputMinutos,outputSegundos,re
 
                     if(tareaSeleccionada != null ){
 
-                        let tareaComplete = document.querySelector(".tarea-seleccionada").children[0].children[2];
- 
-                         let tareaGoal = document.querySelector(".tarea-seleccionada").children[0].children[3];
+
+                        let tareaComplete = document.querySelector(".tarea-seleccionada").querySelector(".task-number-complete")
+
+                        let tareaGoal = document.querySelector(".tarea-seleccionada").querySelector(".task-number-goal")
             
                          if(descanso != true){
                             tareaComplete.textContent = parseInt(tareaComplete.textContent) + 1;
@@ -232,15 +233,19 @@ btnAddTask.addEventListener("click",(e)=>{
 
     containerTask = document.createElement("div")
     containerTask.innerHTML =  `
-    <span><span class="tittle_task">${titleTask}</span> <input type="text" style="display: none;" class="input-modify_tittle"> <span style="margin-left: 20px;" class="task-number-complete">0</span> / <span class="task-number-goal">${numberGoal}</span></span>
-    <button class="btn-modify-task btn"> : </button>
-    <button class="btn-select-task btn btn-outline-dark"> * </button>
-
+    <div class="container-tasks-first">
+        <span id="span"><span class="tittle_task">${titleTask}</span> <input type="text" style="display: none;" class="input-modify_tittle"> <span class="task-number-complete">0</span> <span id="barra">/</span> <span class="task-number-goal">${numberGoal}</span></span>
+        <div class="container-buttons">
+        <button class="btn-modify-task btn btn-outline-dark"> <i class="fa-solid fa-ellipsis-vertical "></i>  </button>
+        <button class="btn-select-task btn btn-outline-dark"><i class="fa-solid fa-check"></i> </button>
+        </div>
+    </div>
     <div class="container-task_options">
       <div style="margin: 20px 0px;">
+
         <span>Completed</span>
         <input class="modify_completed" type="number" style="width: 40px; height: 20px;">
-        <span>Goal</span>
+        <span>/ Goal</span>
         <span class="modify_goal">0</span>
         <button class="raise_goal"><i class="fas fa-arrow-up raise_goal"></i></button>
         <button class="lower_goal"><i class="fas fa-arrow-down"></i></button>
@@ -316,13 +321,15 @@ containerTasks.addEventListener("click",(e)=>{
     }
 
     //modify task
-    if (e.target.classList.contains("btn-modify-task")) {
+    if ( (e.target.classList.contains("btn-modify-task")) || (e.target.classList.contains("fa-ellipsis-vertical")) ) {
 
          // Coloca aquí tu código para manejar el evento
          console.log("evento modificar tarea")
-         let tittleTask = e.target.parentNode.querySelector(".tittle_task")
+         let tittleTask = e.target.parentNode.parentNode.querySelector(".tittle_task")
 
-         let inputModifyTask = e.target.parentNode.querySelector(".input-modify_tittle")
+                
+
+         let inputModifyTask = e.target.parentNode.parentNode.querySelector(".input-modify_tittle")
 
          tittleTask.style.display = "none";
 
@@ -330,14 +337,15 @@ containerTasks.addEventListener("click",(e)=>{
          inputModifyTask.style.display = "inline-block";
 
 
-         let containerTaskOptions = e.target.parentNode.querySelector(".container-task_options")
+         let containerTaskOptions = e.target.parentNode.parentNode.parentNode.querySelector(".container-task_options")
+         console.log(e.target)
          containerTaskOptions.style.display = "block";
 
-         let taskCompleted = e.target.parentNode.querySelector(".task-number-complete")
-         let taskGoal = e.target.parentNode.querySelector(".task-number-goal")
+         let taskCompleted = e.target.parentNode.parentNode.querySelector(".task-number-complete")
+         let taskGoal = e.target.parentNode.parentNode.querySelector(".task-number-goal")
 
-         let modifyCompleted = e.target.parentNode.querySelector(".modify_completed")
-         let modifyGoal = e.target.parentNode.querySelector(".modify_goal")
+         let modifyCompleted = e.target.parentNode.parentNode.parentNode.querySelector(".modify_completed")
+         let modifyGoal = e.target.parentNode.parentNode.parentNode.querySelector(".modify_goal")
 
          modifyCompleted.value = taskCompleted.textContent
          modifyGoal.textContent = taskGoal.textContent
@@ -345,10 +353,10 @@ containerTasks.addEventListener("click",(e)=>{
 
     //select task
 
-    if(e.target.classList.contains("btn-select-task")){
+    if((e.target.classList.contains("btn-select-task")) ||  (e.target.classList.contains("fa-check")) ){
 
-        console.log(e.target.parentNode.parentNode);
-        console.log("evento seleccionar tarea")
+        // console.log(e.target.parentNode.parentNode);
+        // console.log("evento seleccionar tarea")
         
         // Elimina la clase "tarea-seleccionada" de todos los elementos con la clase "tarea-seleccionada"
         var selectedTasks = document.querySelectorAll(".tarea-seleccionada");
@@ -357,9 +365,15 @@ containerTasks.addEventListener("click",(e)=>{
         });
 
         // Agrega la clase "tarea-seleccionada" al elemento clickeado
-        console.log(e.target.parentNode.parentNode)
-        e.target.parentNode.classList.add("tarea-seleccionada");
+   
+        // e.target.parentNode.parentNode.parentNode.classList.add("tarea-seleccionada");
 
+        if(e.target.classList.contains("fa-check")){
+            e.target.parentNode.parentNode.parentNode.parentNode.classList.add("tarea-seleccionada");
+            console.log(e.target.parentNode.parentNode.parentNode.parentNode)
+        }else{
+            e.target.parentNode.parentNode.parentNode.classList.add("tarea-seleccionada");
+        }
 
     }
 
