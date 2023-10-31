@@ -236,26 +236,30 @@ btnAddTask.addEventListener("click",(e)=>{
     <div class="container-tasks-first">
         <span id="span"><span class="tittle_task">${titleTask}</span> <input type="text" style="display: none;" class="input-modify_tittle"> <span class="task-number-complete">0</span> <span id="barra">/</span> <span class="task-number-goal">${numberGoal}</span></span>
         <div class="container-buttons">
-        <button class="btn-modify-task btn btn-outline-dark"> <i class="fa-solid fa-ellipsis-vertical "></i>  </button>
-        <button class="btn-select-task btn btn-outline-dark"><i class="fa-solid fa-check"></i> </button>
+            <button class="btn-modify-task btn btn-outline-dark"> <i class="fa-solid fa-ellipsis-vertical "></i>  </button>
+            <button class="btn-select-task btn btn-outline-dark"><i class="fa-solid fa-check"></i> </button>
         </div>
     </div>
-    <div class="container-task_options">
-      <div style="margin: 20px 0px;">
+    <div class="container-task_options" style="margin: 20px 0px;">
 
-        <span>Completed</span>
-        <input class="modify_completed" type="number" style="width: 40px; height: 20px;">
-        <span>/ Goal</span>
-        <span class="modify_goal">0</span>
-        <button class="raise_goal"><i class="fas fa-arrow-up raise_goal"></i></button>
-        <button class="lower_goal"><i class="fas fa-arrow-down"></i></button>
-      </div>
-  
-      <div>
-        <button class="btn-delete_task">Delete</button>
-        <button class="btn-cancel_options">Cancel</button>
-        <button class="btn-accept_modify">Accept</button>
-      </div>
+        <div id="completed-goal_modify">
+            <div id="completed-modify">
+                <span>Completed</span>
+                <input class="modify_completed" type="number" style="width: 40px; height: 20px;">
+            </div>
+            <div class="container-modify_goal">
+                <span><span id="barra-2">/</span>Goal</span>
+                <span class="modify_goal">0</span>
+                <button class="raise_goal btn  btn-outline-dark"><i class="fas fa-arrow-up raise_goal"></i></button>
+                <button class="lower_goal btn  btn-outline-dark"><i class="fas fa-arrow-down lower_goal"></i></button>
+            </div>
+        </div>
+
+        <div id="buttons-modify">
+            <button class="btn-delete_task">Delete</button>
+            <button class="btn-cancel_options">Cancel</button>
+            <button class="btn-accept_modify">Accept</button>
+        </div>
     </div>
     
     `
@@ -318,6 +322,7 @@ containerTasks.addEventListener("click",(e)=>{
             counterGoalModify--
             modifyGoalTask.textContent = counterGoalModify
         }
+        
     }
 
     //modify task
@@ -325,30 +330,58 @@ containerTasks.addEventListener("click",(e)=>{
 
          // Coloca aquí tu código para manejar el evento
          console.log("evento modificar tarea")
-         let tittleTask = e.target.parentNode.parentNode.querySelector(".tittle_task")
+
+         if(e.target.classList.contains("fa-ellipsis-vertical")){
+            let tittleTask = e.target.parentNode.parentNode.parentNode.querySelector(".tittle_task")
+
+            let inputModifyTask = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".input-modify_tittle")
+
+            tittleTask.style.display = "none";
+   
+            inputModifyTask.value = tittleTask.textContent;
+            inputModifyTask.style.display = "inline-block";
+   
+   
+            let containerTaskOptions = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".container-task_options")
+            console.log(e.target)
+            containerTaskOptions.style.display = "block";
+   
+            let taskCompleted = e.target.parentNode.parentNode.parentNode.querySelector(".task-number-complete")
+            let taskGoal = e.target.parentNode.parentNode.parentNode.querySelector(".task-number-goal")
+   
+            let modifyCompleted = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".modify_completed")
+            let modifyGoal = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".modify_goal")
+
+            
+            modifyCompleted.value = taskCompleted.textContent
+            modifyGoal.textContent = taskGoal.textContent
+           
+        }else{
+            let tittleTask = e.target.parentNode.parentNode.querySelector(".tittle_task")
+
+            let inputModifyTask = e.target.parentNode.parentNode.querySelector(".input-modify_tittle")
+
+            tittleTask.style.display = "none";
+   
+            inputModifyTask.value = tittleTask.textContent;
+            inputModifyTask.style.display = "inline-block";
+   
+   
+            let containerTaskOptions = e.target.parentNode.parentNode.parentNode.querySelector(".container-task_options")
+            console.log(e.target)
+            containerTaskOptions.style.display = "block";
+   
+            let taskCompleted = e.target.parentNode.parentNode.querySelector(".task-number-complete")
+            let taskGoal = e.target.parentNode.parentNode.querySelector(".task-number-goal")
+   
+            let modifyCompleted = e.target.parentNode.parentNode.parentNode.querySelector(".modify_completed")
+            let modifyGoal = e.target.parentNode.parentNode.parentNode.querySelector(".modify_goal")
 
                 
+            modifyCompleted.value = taskCompleted.textContent
+            modifyGoal.textContent = taskGoal.textContent
+        }
 
-         let inputModifyTask = e.target.parentNode.parentNode.querySelector(".input-modify_tittle")
-
-         tittleTask.style.display = "none";
-
-         inputModifyTask.value = tittleTask.textContent;
-         inputModifyTask.style.display = "inline-block";
-
-
-         let containerTaskOptions = e.target.parentNode.parentNode.parentNode.querySelector(".container-task_options")
-         console.log(e.target)
-         containerTaskOptions.style.display = "block";
-
-         let taskCompleted = e.target.parentNode.parentNode.querySelector(".task-number-complete")
-         let taskGoal = e.target.parentNode.parentNode.querySelector(".task-number-goal")
-
-         let modifyCompleted = e.target.parentNode.parentNode.parentNode.querySelector(".modify_completed")
-         let modifyGoal = e.target.parentNode.parentNode.parentNode.querySelector(".modify_goal")
-
-         modifyCompleted.value = taskCompleted.textContent
-         modifyGoal.textContent = taskGoal.textContent
     }
 
     //select task

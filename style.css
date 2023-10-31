@@ -178,17 +178,19 @@ input{
     padding: 15px;
     margin: 15px 5px;
     border-radius: 7px;
+    opacity: 0.9;
+
 }
 
 
 .tarea-completada{
-    border: 4px solid #99A3A4;
+    border: 4px solid #198754;
 }
 
 .tarea-seleccionada{
     /* margin-left: 3px; */
-    border-left: 7px solid black;
-    opacity: 0.9;
+    border-left: 9px solid #54595a;
+    opacity: 1;
 }
 
 
@@ -392,6 +394,7 @@ align-items: center;
 }
 
 #span input{
+    width: 70%;
     border: none;
     border-bottom: 2px solid #454545;
     text-align: center;
@@ -419,4 +422,16 @@ align-items: center;
 
 #barra{
     opacity: 0.8;
+}
+
+
+#completed-goal_modify{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+}
+
+#barra-2{
+ margin: 0px 20px;
 }
