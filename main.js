@@ -66,8 +66,12 @@ counterGoalTask = 1;
 // Funciones
 
 iniciarIntervalo = ()=>{
-    btnIniciar.style.display = "none"
-    btnDetener.style.display = "inline-block"
+
+    if(parseInt(horasInput.textContent) != 0 || parseInt(minutosInput.textContent) != 0 || parseInt(segundosInput.textContent) != 0){
+        btnIniciar.style.display = "none"
+        btnDetener.style.display = "inline-block"
+    }
+   
 
     contenedorSetTime.style.display = "none"
     contenedorTEjecucion.style.display = "block" 
@@ -78,12 +82,12 @@ iniciarIntervalo = ()=>{
     }else{
 
         if(iniciado == false){
-            console.log("valor - 1")
+            // console.log("valor - 1")
             intervalo(parseInt(horasInput.textContent),parseInt(minutosInput.textContent),parseInt(segundosInput.textContent),horasView, minutosView,segundosView)
             iniciado = true
         }else{
-            console.log("valor - 2")
-            console.log(document.querySelector(".segundos-s"))
+            // console.log("valor - 2")
+            // console.log(document.querySelector(".segundos-s"))
             intervalo(parseInt(horasView.textContent),parseInt(minutosView.textContent),parseInt(segundosView.textContent),horasView, minutosView,segundosView)
         }    
     }
@@ -95,11 +99,10 @@ intervalo = (horas,minutos,segundos,outputHoras, outputMinutos,outputSegundos,re
     segundosContador = segundos;
     horasContador = horas;
 
-    console.log(minutosDescanso.value)
 
     var intervalorId = setInterval(() => {
        intervaloEnEjecucion = true 
-        console.log("dentro del intervalo")
+        // console.log("dentro del intervalo")
         outputSegundos.textContent = segundosContador;
         outputMinutos.textContent = minutosContador;
         outputHoras.textContent = horasContador;
@@ -185,6 +188,11 @@ intervalo = (horas,minutos,segundos,outputHoras, outputMinutos,outputSegundos,re
 
 
     btnDetener.addEventListener("click",()=>{
+
+        if(iniciado = true){
+            btnIniciar.textContent = "Continue"
+        }
+
         btnIniciar.style.display = "inline-block"
         btnDetener.style.display = "none"
         clearInterval(intervalorId)
@@ -194,6 +202,7 @@ intervalo = (horas,minutos,segundos,outputHoras, outputMinutos,outputSegundos,re
         clearInterval(intervalorId)  
         btnDetener.style.display = "none"
         btnIniciar.style.display = "inline-block"
+        btnIniciar.textContent = "Init"
     })
 }
 
@@ -517,13 +526,28 @@ btnLowerGoal.addEventListener("click",()=>{
 var modal = document.getElementById("miModal");
 var botonMostrar = document.getElementById("mostrarModal");
 var botonCerrar = document.getElementById("cerrarModal");
-
+var btnAcceptModal = document.querySelector(".btn-accept-modal")
 
 botonMostrar.onclick = ()=> {
     modal.style.display = "block";
 }
 
 botonCerrar.onclick = ()=> {
+    modal.style.display = "none";
+    // iniciarIntervalo()
+    horasInput.textContent = horasSet.value;
+    minutosInput.textContent = minutosSet.value;
+    segundosInput.textContent = segundosSet.value
+
+    TiempoBase = [ horasInput.textContent,minutosInput.textContent, segundosInput.textContent]
+
+    horasView.textContent = horasInput.textContent;
+    minutosView.textContent = minutosInput.textContent;
+    segundosView.textContent = segundosInput.textContent;
+
+}
+
+btnAcceptModal.onclick = ()=> {
     modal.style.display = "none";
     // iniciarIntervalo()
     horasInput.textContent = horasSet.value;
