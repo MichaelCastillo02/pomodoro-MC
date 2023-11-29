@@ -245,20 +245,26 @@ btnAddTask.addEventListener("click",(e)=>{
         <div id="completed-goal_modify">
             <div id="completed-modify">
                 <span>Completed</span>
-                <input class="modify_completed" type="number" style="width: 40px; height: 20px;">
+                <input class="modify_completed" type="number" >
             </div>
             <div class="container-modify_goal">
-                <span><span id="barra-2">/</span>Goal</span>
-                <span class="modify_goal">0</span>
-                <button class="raise_goal btn  btn-outline-dark"><i class="fas fa-arrow-up raise_goal"></i></button>
-                <button class="lower_goal btn  btn-outline-dark"><i class="fas fa-arrow-down lower_goal"></i></button>
+                <div class="c-modify-goal_secundary">
+                    <span><span id="barra-2">/</span>Goal</span>
+                    <span class="modify_goal">0</span>
+                </div>
+                <div class="buttons_raise_lower">
+                    <button class="raise_goal btn  btn-outline-dark"><i class="fas fa-arrow-up raise_goal"></i></button>
+                    <button class="lower_goal lower_goal-btn btn  btn-outline-dark"><i class="fas fa-arrow-down lower_goal"></i></button>
+                </div>
             </div>
         </div>
 
         <div id="buttons-modify">
-            <button class="btn-delete_task">Delete</button>
-            <button class="btn-cancel_options">Cancel</button>
-            <button class="btn-accept_modify">Accept</button>
+            <button class="btn-delete_task btn btn-outline-danger">Delete</button>
+            <div id="buttons-modify-success">
+                <button class="btn-cancel_options btn btn-outline-dark ">Cancel</button>
+                <button class="btn-accept_modify btn btn-outline-success">Accept</button>
+            </div>
         </div>
     </div>
     
@@ -416,15 +422,16 @@ containerTasks.addEventListener("click",(e)=>{
      
         task_modificaciones = e.target.parentNode.parentNode.parentNode.children[0]  
 
-        let task_tittle = e.target.parentNode.parentNode.parentNode.querySelector(".tittle_task")
-        let inputModifyTittle = e.target.parentNode.parentNode.parentNode.querySelector(".input-modify_tittle")
+        let task_tittle = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".tittle_task")
+        console.log(task_tittle)
+        let inputModifyTittle = e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".input-modify_tittle")
 
         
         let modifyCompleted = e.target.parentNode.parentNode.parentNode.querySelector(".modify_completed")
         let modifyGoal = e.target.parentNode.parentNode.parentNode.querySelector(".modify_goal")
 
-        let task_completed =  e.target.parentNode.parentNode.parentNode.querySelector(".task-number-complete")
-        let task_goal =  e.target.parentNode.parentNode.parentNode.querySelector(".task-number-goal")
+        let task_completed =  e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".task-number-complete")
+        let task_goal =  e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".task-number-goal")
   
         task_tittle.style.display = "inline-block"
         inputModifyTittle.style.display = "none"
@@ -433,13 +440,13 @@ containerTasks.addEventListener("click",(e)=>{
         task_completed.textContent = modifyCompleted.value
         task_goal.textContent = modifyGoal.textContent
   
-        e.target.parentNode.parentNode.style.display = "none"
+        e.target.parentNode.parentNode.parentNode.style.display = "none"
 
         if(parseInt(task_completed.textContent) >= parseInt(task_goal.textContent)){
-            e.target.parentNode.parentNode.parentNode.classList.add("tarea-completada")
+            e.target.parentNode.parentNode.parentNode.parentNode.classList.add("tarea-completada")
         }else if(parseInt(task_completed.textContent) < parseInt(task_goal.textContent)){
-            if(e.target.parentNode.parentNode.parentNode.classList.contains("tarea-completada")){
-                e.target.parentNode.parentNode.parentNode.classList.remove("tarea-completada")
+            if(e.target.parentNode.parentNode.parentNode.parentNode.classList.contains("tarea-completada")){
+                e.target.parentNode.parentNode.parentNode.parentNode.classList.remove("tarea-completada")
             }
         }
 
@@ -474,9 +481,9 @@ containerTasks.addEventListener("click",(e)=>{
     }
 
     if(e.target.classList.contains("btn-cancel_options")){
-        e.target.parentNode.parentNode.style.display = "none"
-        e.target.parentNode.parentNode.parentNode.querySelector(".input-modify_tittle").style.display = "none"
-        e.target.parentNode.parentNode.parentNode.querySelector(".tittle_task").style.display = "inline-block"
+        e.target.parentNode.parentNode.parentNode.style.display = "none"
+        e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".input-modify_tittle").style.display = "none"
+        e.target.parentNode.parentNode.parentNode.parentNode.querySelector(".tittle_task").style.display = "inline-block"
 
     }
 
@@ -537,3 +544,4 @@ window.onclick = (event)=> {
         modal.style.display = "none";
     }
 }
+

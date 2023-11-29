@@ -198,6 +198,7 @@ input{
 
 .container-task_options{
     display: none;
+    margin-bottom: 8px !important
 }
 
 
@@ -432,6 +433,61 @@ align-items: center;
 
 }
 
+#completed-goal_modify span{
+    font-size: 18px;
+    color: #454545;
+}
+
+.modify_completed{
+    margin-left: 10px;
+    text-align: center;
+    padding: 5px;
+    background-color: #e9e9e9;
+    width: 70px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    color: #454545;
+    opacity: 0.8;
+}
+
+    .modify_completed:focus{
+        outline: none;
+    }
+
+
 #barra-2{
  margin: 0px 20px;
+}
+
+.container-modify_goal{
+    display: flex;
+    align-items: center;
+}
+
+.buttons_raise_lower{
+    margin-left: 20px;
+}
+
+    .buttons_raise_lower button{
+        padding: 4px 15px;
+    }
+
+    .lower_goal-btn{
+        margin-left: 7px;
+    }
+
+#buttons-modify{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-accept_modify{
+    margin: 0 10px;
+}
+
+.btn-delete_task{
+    margin-left: 30px;
 }
