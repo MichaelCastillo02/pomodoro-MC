@@ -6,12 +6,12 @@
 }
 
 body{
-    background: #454545;
+    background: #352E3E;
     color: white;
 }
 
 input{
-    background-color: #454545;
+    background-color: #352E3E;
     color: white;
 }
 
@@ -517,20 +517,100 @@ align-items: center;
     }
 }
 
+
+@media (max-width:850px){
+    #span {
+       width: 70%;
+    }
+}
+
 /* padding: 80px 180px; */
 
  @media (max-width: 768px) {
     .contenedor-principal_borde{
         max-width: 85% !important;
         padding: 70px 50px;
+        border-color: #352E3E;
+    }
+
+    .contenedor-crear_tareas input{
+        width: 60%;
+    }
+
+    .container-add-task_options{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    /* tasks */
+
+    /* #span{
+        margin-left: 30px;
+        font-size: 20px;
+    
+    }
+
+    
+    #span input{
+        width: 70%;
+        border: none;
+        border-bottom: 2px solid #454545;
+        text-align: center;
+        background-color: white;
+        color: #454545;
+    
+    } */
+
+    #span{
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .tittle_task{
+        text-align: center;
+    }
+
+    .task-number-complete{
+        margin-left: 15px;
+    }
+    
+
+    
+    .container-task{
+        width: 80%;
+
     }
 }  
 
-@media (max-width: 530px) {
+@media (max-width: 600px) {
+
+    #span{
+        width: 60%;
+    }
+    #barra-2{
+        display: none;
+    }
+
+    #completed-goal_modify{
+        flex-direction: column;
+        align-items: flex-start !important ; 
+        margin-top: 40px;
+
+    }
+
+    #completed-modify{
+        margin-bottom: 30px;
+    }
+}
+
+
+@media (max-width: 534px) {
 
     .contenedor-principal_borde{
         max-width: 95% !important;
         padding: 70px 30px;
+        /* border-color: ; */
     }
 
     .container-time{
@@ -540,6 +620,31 @@ align-items: center;
     .container-buttons_time{
         display: flex;
         flex-direction: column;
+    }
+
+    /* Crear tareas */
+
+    /* .contenedor-crear_tareas input{
+        border: none;
+        border-bottom: 2px solid #fff;
+        width: 34%;
+        text-align: center;
+        margin-bottom: 10px;
+    } */
+
+    .contenedor-crear_tareas input{
+        width: 70%;
+ 
+    }
+
+
+    .container-buttons button{
+        padding: 3px 10px;
+    }
+
+
+    #span input{
+        width: 60%;
     }
 }
 
@@ -556,5 +661,51 @@ align-items: center;
     .container-buttons_time{
         display: flex;
         flex-direction: column;
+    }
+
+    /* tasks */
+
+    .container-task{
+        width: 95%;
+
+    }
+
+    #span input{
+        width: 50%;
+    }
+
+    #buttons-modify{
+        flex-direction: column;
+    }
+
+    #buttons-modify button {
+        margin: 0;
+        padding: 8px 70px;
+    }
+
+    #buttons-modify-success{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #buttons-modify-success button{
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 340px) {
+
+    #span{
+        width: 50%;
+    }
+
+    #span input{
+        width: 90%;
+    }
+
+    #completed-goal_modify{
+        margin-left: 10px;
+
     }
 }
