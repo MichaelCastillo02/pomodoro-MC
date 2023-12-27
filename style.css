@@ -38,6 +38,53 @@ input{
 }
 
 
+/* NavBar */
+
+.navbar{
+    margin-bottom: 70px;
+}
+
+    .navbar h1{
+        font-weight: 600;
+        margin-left: 15px;
+        color: var(--blackcurrant-500);
+    }
+
+    .navbar button{
+        margin-right: 15px;
+    }
+
+.informationNav{
+    padding-bottom: 1px !important;
+}
+
+.listNav{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;  
+    font-weight: bold;
+}
+
+.listNav a{
+    text-decoration: none;
+    color: #fff;
+}
+
+    .listNav a:first-child{
+        margin-top: 10px;
+    }
+
+    .listNav a:nth-child(2){
+        margin: 10px 0;
+    }
+
+.text-body-emphasis{
+    margin-left: 4px;
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--blackcurrant-500);
+}
+
 /* header */
 .container-header{
     display: flex;
@@ -54,16 +101,20 @@ input{
 
  
 #mostrarModal{
-    height: 40px;
-    padding: 0px 60px;
-    font-size: 20px;
+    border-color: #cecece;
+    color: #fff;
+    padding: 5px 60px 7px 60px;
+    font-size: 21px;
     margin-bottom: 15px;
+    border-width: 2px;
     /* font-weight: bold; */
     /* border-radius: 7px; */
     /* border: none; */
 } 
 
-
+#mostrarModal:hover{
+    border-color: #212529;
+}
 
 .contenedor-tiempo_ejecucion{
     display: none;
@@ -93,7 +144,7 @@ input{
 .modal-contenido {
     background-color: white;
     color: black;
-    margin: 100px auto;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #888;
     width: 70%;
@@ -113,6 +164,10 @@ input{
         justify-content: space-between;
         align-items: center;
     }
+
+#contenedor-tiempo-prueba{
+    display: flex;
+}
 
 .contenedor-tiempo{
     margin-top: 40px;
@@ -272,7 +327,7 @@ text-align: center;
 }
 
 .contenedor-principal_borde{
-    max-width: 60% !important;
+    max-width: 70% !important;
     display: flex;       
     flex-direction: column; 
     align-items: center; 
@@ -280,8 +335,15 @@ text-align: center;
     border: 3px solid white;
     padding: 80px 180px;
     border-radius: 10px;
-
+    transition: all .40s ease;
 }
+
+.contenedor-principal_borde:hover{
+    border-color: var(--blackcurrant-600);
+}
+
+
+
 
 .container-time{
     font-size: 100px;
@@ -297,13 +359,24 @@ text-align: center;
 
 .btn-reiniciar{
     padding: 7px 40px !important;
+    border-width: 2px;
 }
 
 .btn-iniciar{
     font-weight: bold;
     outline: none;
+    color: #fff;
+    border-color: var(--blackcurrant-800);
+    border-width: 2px;
+    color: var(--blackcurrant-700);
 }
 
+    .btn-iniciar:hover{
+     background-color: var(--blackcurrant-800);  
+    border-color: var(--blackcurrant-800);
+    color: #fff;
+
+    }
 .container-pomodoro_count{
     margin-top: 40px;
     font-size: 20px;
@@ -555,6 +628,11 @@ align-items: center;
 
 /* Media query para pantallas con una resolución menor a 1024px */
 @media (max-width: 1196px) {
+    .contenedor-principal_borde{
+        max-width: 85% !important;
+        padding: 70px 50px;
+    }
+
     .container-buttons_time {
         display: flex;
         justify-content: center;
@@ -565,10 +643,9 @@ align-items: center;
         text-align: center;
     }
 
-    .contenedor-principal_borde{
-        max-width: 70% !important;
-        padding: 70px 100px;
-    }
+
+
+ 
 }
 
 @media (max-width: 980px){
@@ -579,7 +656,14 @@ align-items: center;
 
     }    */
 
+    .modal-contenido{
+        width: 95%;
+    }
 
+    .contenedor-principal_borde{
+        max-width: 85% !important;
+        padding: 70px 50px;
+    }
 }
 
 
@@ -647,13 +731,20 @@ align-items: center;
 
     }
 
-    .modal-contenido{
-        width: 95%;
-    }
+  
 }  
 
-@media (max-width: 600px) {
+@media (max-width: 690px) {
+    .contenedor-principal_borde{
+        max-width: 95% !important;
+        padding: 70px 30px;
+        /* border-color: ; */
+    }
+}
 
+
+@media (max-width: 600px) {
+   
     #span{
         width: 60%;
     }
@@ -764,7 +855,14 @@ align-items: center;
     }
 
   
+    #contenedor-tiempo-prueba{
+        flex-direction: column;
 
+    }
+
+    #contenedor-tiempo-prueba div{
+        margin-bottom: 25px;
+    }
  
 }
 

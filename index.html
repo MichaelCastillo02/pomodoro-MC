@@ -31,12 +31,35 @@
 <body>
 
 
+    <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <div class="bg-dark p-4 informationNav">
+          <h5 class="text-body-emphasis h4">Sections</h5>
+          <ul class="listNav">
+            <a href="#">How To Use</a>
+            <a href="#">What is the Pomodoro technique?</a>
+            <a href="#">About This Project</a>
+          </ul>
+        </div>
+      </div>
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+        <h1>M-Focus</h1>
 
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
 
-<div class="container-header">
+<!-- <div class="container-header">
     <h1>M-Focus</h1>
-    <a href="#acerca">About this project</a>
-</div>
+    <ul>
+        <a href="#">How to use</a>
+        <a href="#acerca">About Project</a>
+        <a href="#acerca">About Me</a>
+    </ul>
+   
+</div> -->
 
 <!-- Modal -->
 
@@ -50,18 +73,32 @@
        
        
         <div class="contenedor-tiempo">
-            <h2>Tiempo de pomodoro</h3>
-            <label for="cantidad">Horas:</label>
-            <input type="number" id="horas-set" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+            <h2>Tiempo de pomodoro</h2>
+
+           <div id="contenedor-tiempo-prueba">
+                <div>
+                    <label for="cantidad">Horas:</label>
+                    <input type="number" id="horas-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+                 </div>
         
-            <label for="cantidad">Minutos:</label>
-            <input type="number" id="minutos-set" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+                <div>
+                    <label for="cantidad">Minutos:</label>
+                    <input type="number" id="minutos-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+    
         
-            <label for="cantidad">Segundos:</label>
-            <input type="number" id="segundos-set" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+                <div>
+                    <label for="cantidad">Segundos:</label>
+                    <input type="number" id="segundos-set" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+
+           </div>
+           
         </div>
 
         <div class="border-bottom mb-3"></div>
@@ -69,17 +106,32 @@
 
         <div class="contenedor-tiempo_descanso ">
             <h2>Tiempo de descanso</h2>
-            <label for="cantidad">Horas:</label>
-            <input type="number" id="horas-descanso" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+            
+            <div id="contenedor-tiempo-prueba">
+                <div>
+                    <label for="cantidad">Horas:</label>
+                    <input type="number" id="horas-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+                </div>
+
+                <div>
+                    <label for="cantidad">Minutos:</label>
+                    <input type="number" id="minutos-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+                </div>
+
+                <div>
+                    <label for="cantidad">Segundos:</label>
+                    <input type="number" id="segundos-descanso" name="cantidad" min="0" 
+                    max="100" step="1" value="0">
+
+                </div>
+            </div>
+           
         
-            <label for="cantidad">Minutos:</label>
-            <input type="number" id="minutos-descanso" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+           
         
-            <label for="cantidad">Segundos:</label>
-            <input type="number" id="segundos-descanso" name="cantidad" min="0" 
-            max="100" step="1" value="0">
+            
 
         </div>
 
@@ -104,7 +156,7 @@
 <div class="contenedor-principal">
 
     <div class="container contenedor-principal_borde">
-        <button id="mostrarModal" class="btn btn-outline-light">settings</button>
+        <button id="mostrarModal" class="btn btn-outline-dark">Settings</button>
 
 
         <div class=" contenedor-tiempo_establecido container-time">
